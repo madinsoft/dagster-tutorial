@@ -1,0 +1,21 @@
+instance:
+  storage:
+    # Default storage configuration using SQLite
+    sqlite:
+      base_dir: D:\ltsawv5\projects\demo-dagster\data\history
+
+  run_launcher:
+    # Default run launcher configuration
+    module: dagster.core.launcher
+    class: DefaultRunLauncher
+
+  compute_logs:
+    # Default compute log storage configuration
+    module: dagster.core.storage.local_compute_log_manager
+    class: LocalComputeLogManager
+    config:
+      base_dir: D:\ltsawv5\projects\demo-dagster\data\logs
+
+  telemetry:
+    # Telemetry configuration
+    enabled: false
