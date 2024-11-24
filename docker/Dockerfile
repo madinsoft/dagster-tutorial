@@ -19,4 +19,5 @@ RUN \
   fi
 
 # Specify the command to run on container start
-CMD [ "dagster", "dev" ]
+# CMD [ "dagster", "dev" ]
+CMD [ "python", "./app.py" ]
