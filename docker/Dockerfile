@@ -3,6 +3,7 @@ FROM registry.access.redhat.com/ubi9/python-39:1-117.1684741281
 # By default, listen on port 8081
 EXPOSE 3000/tcp
 ENV FLASK_PORT=3000
+ENV DAGSTER_HOME=/projects/data
 
 # Set the working directory in the container
 WORKDIR /projects
@@ -18,6 +19,7 @@ RUN \
     then pip install -r *.txt; \
   fi
 
+USER root
 RUN chmod ug+rw -R /projects
 # Specify the command to run on container start
 # CMD [ "dagster", "dev" ]
