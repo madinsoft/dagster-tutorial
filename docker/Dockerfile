@@ -18,7 +18,7 @@ RUN \
     then pip install -r *.txt; \
   fi
 
-RUN chmod ub+rw -R /projects
+RUN chmod ug+rw -R /projects
 # Specify the command to run on container start
 # CMD [ "dagster", "dev" ]
 CMD [ "python", "./app.py" ]
