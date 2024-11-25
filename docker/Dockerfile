@@ -5,7 +5,7 @@ EXPOSE 3000/tcp
 ENV FLASK_PORT=3000
 
 # Set the working directory in the container
-WORKDIR /opt/app-root/src/projects
+WORKDIR /projects
 
 # Copy the content of the local src directory to the working directory
 COPY . .
@@ -18,6 +18,7 @@ RUN \
     then pip install -r *.txt; \
   fi
 
+RUN chmod ub+rw -R /projects
 # Specify the command to run on container start
 # CMD [ "dagster", "dev" ]
 CMD [ "python", "./app.py" ]
