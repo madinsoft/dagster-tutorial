@@ -1,6 +1,6 @@
 telemetry:
   enabled: false
-instance:
+storage:
   class: dagster_postgres.PostgresInstance
   config:
     postgres_db:
