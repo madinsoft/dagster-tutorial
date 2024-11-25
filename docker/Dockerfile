@@ -5,7 +5,7 @@ EXPOSE 3000/tcp
 ENV FLASK_PORT=3000
 
 # Set the working directory in the container
-WORKDIR /projects
+WORKDIR /opt/app-root/src/projects
 
 # Copy the content of the local src directory to the working directory
 COPY . .
