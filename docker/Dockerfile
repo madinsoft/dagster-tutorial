@@ -26,5 +26,4 @@ RUN chmod ug+rw -R /app
 
 
 # Specify the command to run on container start
-CMD [ "dagster", "dev" ]
-# CMD [ "python", "./app.py" ]
+CMD ["dagster", "dev", "-h", "0.0.0.0", "-p", "3000"]
