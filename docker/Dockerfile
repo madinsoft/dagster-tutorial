@@ -2,7 +2,6 @@ FROM registry.access.redhat.com/ubi9/python-39:1-117.1684741281
 
 # By default, listen on port 8081
 EXPOSE 3000/tcp
-ENV FLASK_PORT=3000
 ENV DAGSTER_HOME=/app/data
 
 # Mettre à jour pip
@@ -14,7 +13,6 @@ WORKDIR /app
 # Copy the content of the local src directory to the working directory
 COPY . .
 
-RUN 
 # Install any dependencies
 RUN \
   if [ -f requirements.txt ]; \
@@ -26,8 +24,6 @@ RUN \
 USER root
 RUN chmod ug+rw -R /app
 
-# Exposer le port pour Dagit
-EXPOSE 3000
 
 # Specify the command to run on container start
 CMD [ "dagster", "dev" ]
