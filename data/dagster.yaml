@@ -3,8 +3,8 @@ telemetry:
 storage:
   postgres:
     postgres_db:
-      username: ${POSTGRES_USER}
-      password: ${POSTGRES_PASSWORD}
-      hostname: ${POSTGRES_HOST}
-      db_name: ${POSTGRES_DB}
+      username: {POSTGRES_USER}
+      password: {POSTGRES_PASSWORD}
+      hostname: {POSTGRES_HOST}
+      db_name: {POSTGRES_DB}
       port: 5432
